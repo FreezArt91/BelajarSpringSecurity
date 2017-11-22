@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www,thymeleaf.org" xmlns:sec="http://www,thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <head>        
+    </head>
+    <body>
+        <div th:fragment="footer">
+            <div class="container">
+                <footer>
+                    @ 2017 FreezArt
+                    <span sec:authorize="isAuthenticated()">
+                        | Logged user : <span sec:authentication="principal.authorities"></span>
+                        
+                        <a th:href="@{/logout}">sign out</a>
+                    </span>
+                    <script type="text/javascript" src="webjars/bootstrap/3.3.7/bootstrap.min.js"></script>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
